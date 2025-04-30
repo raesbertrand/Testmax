@@ -7,6 +7,7 @@ use App\Commands\RaidStatsByName;
 use App\Commands\BombsAvailable;
 use App\Commands\RegisterName;
 use App\Commands\ListRegisteredNames;
+use App\Commands\UnregisterName;
 
 class Bot
 {
@@ -32,7 +33,9 @@ class Bot
 
             $listRegisteredNames = new ListRegisteredNames();
             $discord->on('message', fn($message) => $listRegisteredNames->handle($message));
-        
+
+            $unregisterName = new UnregisterName();
+            $discord->on('message', fn($message) => $unregisterName->handle($message));
         });
 
         $discord->run();
