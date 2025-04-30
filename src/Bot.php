@@ -5,6 +5,7 @@ use Discord\Discord;
 use App\Commands\RaidStatsLoop;
 use App\Commands\RaidStatsByName;
 use App\Commands\BombsAvailable;
+use App\Commands\RegisterName;
 
 class Bot
 {
@@ -24,6 +25,9 @@ class Bot
 
             $bombsAvailable = new BombsAvailable($guildApiKeys);
             $discord->on('message', fn($message) => $bombsAvailable->handle($message));
+
+            $registerName = new RegisterName();
+            $discord->on('message', fn($message) => $registerName->handle($message));
         });
 
         $discord->run();
