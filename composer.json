@@ -3,10 +3,10 @@
     "description": "Un bot Discord utilisant discord-php, Guzzle, Dotenv et Carbon.",
     "type": "project",
     "require": {
-        "team-reflex/discord-php": "^8.0",
-        "guzzlehttp/guzzle": "^7.0",
-        "vlucas/phpdotenv": "^5.0",
-        "nesbot/carbon": "^2.0"
+        "team-reflex/discord-php": "^10.7",
+        "guzzlehttp/guzzle": "^7.7",
+        "vlucas/phpdotenv": "^5.5",
+        "nesbot/carbon": "^2.65"
     },
     "autoload": {
         "psr-4": {
