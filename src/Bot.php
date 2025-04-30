@@ -6,6 +6,7 @@ use App\Commands\RaidStatsLoop;
 use App\Commands\RaidStatsByName;
 use App\Commands\BombsAvailable;
 use App\Commands\RegisterName;
+use App\Commands\ListRegisteredNames;
 
 class Bot
 {
@@ -28,6 +29,10 @@ class Bot
 
             $registerName = new RegisterName();
             $discord->on('message', fn($message) => $registerName->handle($message));
+
+            $listRegisteredNames = new ListRegisteredNames();
+            $discord->on('message', fn($message) => $listRegisteredNames->handle($message));
+        
         });
 
         $discord->run();
