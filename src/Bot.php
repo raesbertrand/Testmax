@@ -4,6 +4,7 @@ namespace App;
 use Discord\Discord;
 use App\Commands\RaidStatsLoop;
 use App\Commands\RaidStatsByName;
+use App\Commands\BombsAvailable;
 
 class Bot
 {
@@ -20,6 +21,9 @@ class Bot
             // Dans la fonction 'ready':
             $raidStatsByName = new RaidStatsByName($guildApiKeys);
             $discord->on('message', fn($message) => $raidStatsByName->handle($message));
+
+            $bombsAvailable = new BombsAvailable($guildApiKeys);
+            $discord->on('message', fn($message) => $bombsAvailable->handle($message));
         });
 
         $discord->run();
