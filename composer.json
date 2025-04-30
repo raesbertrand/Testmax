@@ -1,0 +1,1 @@
+composer require team-reflex/discord-php guzzlehttp/guzzle vlucas/phpdotenv nesbot/carbon
