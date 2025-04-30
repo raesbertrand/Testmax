@@ -2,7 +2,10 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 use Discord\Interaction;
+use Dotenv\Dotenv;
 use Discord\InteractionResponseType;
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 // Renseigne ici ta clé publique (visible dans le portail développeur Discord)
 $publicKey = $_ENV['DISCORD_KEY'];
