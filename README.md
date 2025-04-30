@@ -1,6 +1,6 @@
 # Testmax
 ## commandes à taper dans le salon discord
-## lister les membres
+### lister les membres
 affiche les membres enregistrés
 ‎/list_registered_names‎
 
