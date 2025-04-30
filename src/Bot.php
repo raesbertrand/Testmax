@@ -3,6 +3,7 @@ namespace App;
 
 use Discord\Discord;
 use App\Commands\RaidStatsLoop;
+use App\Commands\RaidStatsByName;
 
 class Bot
 {
@@ -15,6 +16,10 @@ class Bot
 
             $raidStatsLoop = new RaidStatsLoop($guildApiKeys);
             $discord->on('message', fn($message) => $raidStatsLoop->handle($message));
+       
+            // Dans la fonction 'ready':
+            $raidStatsByName = new RaidStatsByName($guildApiKeys);
+            $discord->on('message', fn($message) => $raidStatsByName->handle($message));
         });
 
         $discord->run();
